@@ -1,0 +1,168 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #837c7c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+    position: relative; /* Ensures the ::before pseudo-element positions correctly */
+}
+
+/* Background with Opacity */
+body::before {
+    content: '';
+    background: url('heart.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8; /* Adjust this value for lighter or darker opacity */
+    z-index: -1; /* Keeps the background behind all content */
+}
+
+/* Center Container */
+.container {
+    background: #080808;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Headings */
+h1 {
+    color: #ff5e62;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Form Styling */
+form {
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #090909;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #333;
+    background-color: #dad0d0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff5e62;
+    box-shadow: 0 0 8px rgba(255, 94, 98, 0.4);
+    background-color: #fff;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff5e62;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 94, 98, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #e04b4d;
+    box-shadow: 0 6px 15px rgba(224, 75, 77, 0.4);
+    transform: scale(1.05);
+}
+
+/* Result Text */
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2ecc71; /* Green for positive result */
+    animation: slideIn 1s ease-out;
+}
+
+/* Footer Style */
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
